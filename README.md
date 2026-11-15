@@ -24,15 +24,15 @@ Then choose **Run → Run All Cells**.
 
 ## Project layout
 
-```
-data/                              one CSV per teammate (or one merged dataset.csv)
+
+data/                              one CSV per teammate 
   jordan_attacks.csv               direct override + role spoofing attacks
-  tamea_benign.csv                 benign examples (incl. misleading words)   [TODO]
-  vasijile_attacks.csv             indirect + paraphrased attacks             [TODO]
+  tamea_benign.csv                 benign examples (incl. misleading words)  
+  vasijile_attacks.csv             indirect + paraphrased attacks            
 prompt_injection_detection.ipynb   full pipeline: load → split → baselines → evaluation
 split_assignments.csv              generated: which texts are train vs. test
 confusion_matrices.png             generated: confusion matrices for both detectors
-```
+
 
 ## Dataset format
 
@@ -40,11 +40,11 @@ Every CSV in `data/` must have these columns:
 
 | Column     | Meaning |
 |------------|---------|
-| `id`       | Unique ID with an author prefix (J001, T001, V001) |
+| `id`       | Unique ID with an author prefix (J001 = Jordan, T001 = Tamea, V001 = Vasilije) |
 | `text`     | The message sent to the assistant |
 | `label`    | 1 = suspected injection, 0 = benign |
-| `category` | e.g. `direct_override`, `role_spoofing`, `indirect`, `paraphrased`, `benign`, `benign_misleading` |
-| `seed_id`  | Group ID; every paraphrase of the same base example shares one (J-S01, T-S01, …) |
+| `category` | Example: `direct_override`, `role_spoofing`, `indirect`, `paraphrased`, `benign`, `benign_misleading` |
+| `seed_id`  | Group ID |
 | `author`   | Who wrote it |
 
 The notebook loads and merges every CSV in `data/` automatically. It also checks for missing columns, duplicate IDs, invalid labels and seed groups that mix labels.
@@ -59,7 +59,7 @@ Precision, recall, F1, false-positive rate and a confusion matrix for each detec
 
 ## Limitations
 
-Results come from a small, handcrafted dataset and are not a production security guarantee. A text filter alone does not make an LLM application secure (see the OWASP LLM Prompt Injection Prevention Cheat Sheet).
+Results come from a small, handcrafted dataset and are not a production security guarantee. A text filter alone does not make an LLM application secure.
 
 ## Attribution
 
