@@ -2,12 +2,12 @@
 
 Team: Jordan, Tamea, Vasijile
 
-This project builds and compares two detectors that label text sent to a fictional customer-support assistant as **benign (0)** or **suspected prompt injection (1)**:
+This project builds and compares two detectors that label text sent to a AI customer-support assistant as **benign (0)** or **suspected prompt injection (1)**:
 
 - **Baseline A:** rule-based phrase/regex matching
 - **Baseline B:** TF-IDF vectorization + Logistic Regression (scikit-learn)
 
-All examples are synthetic. No real accounts, passwords or customer records are used.
+All examples are not real
 
 ## Setup
 
