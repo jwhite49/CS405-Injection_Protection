@@ -13,12 +13,12 @@ All examples are not real
 
 Requires Python 3.10+.
 
-```bash
+
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 jupyter notebook prompt_injection_detection.ipynb
-```
+
 
 Then choose **Run → Run All Cells**.
 
