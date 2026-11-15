@@ -36,22 +36,22 @@ confusion_matrices.png             generated: confusion matrices for both detect
 
 ## Dataset format
 
-Every CSV in `data/` must have these columns:
+Every CSV in data/ must have these columns:
 
 | Column     | Meaning |
 |------------|---------|
-| `id`       | Unique ID with an author prefix (J001 = Jordan, T001 = Tamea, V001 = Vasilije) |
-| `text`     | The message sent to the assistant |
-| `label`    | 1 = suspected injection, 0 = benign |
-| `category` | Example: `direct_override`, `role_spoofing`, `indirect`, `paraphrased`, `benign`, `benign_misleading` |
-| `seed_id`  | Group ID |
-| `author`   | Who wrote it |
+| id       | Unique ID with an author prefix (J001 = Jordan, T001 = Tamea, V001 = Vasilije) |
+| text     | The message sent to the assistant |
+| label    | 1 = suspected injection, 0 = benign |
+| category | Example: direct_override, role_spoofing, indirect, paraphrased, benign, benign_misleading |
+| seed_id  | Group ID |
+| author   | Who wrote it |
 
-The notebook loads and merges every CSV in `data/` automatically. It also checks for missing columns, duplicate IDs, invalid labels and seed groups that mix labels.
+The notebook loads and merges every CSV in data/ automatically. It also checks for missing columns, duplicate IDs, invalid labels and seed groups that mix labels.
 
 ## Split procedure
 
-We use `GroupShuffleSplit` (70% train / 30% test) grouped by `seed_id`. All paraphrases of the same seed land on the same side, so near-duplicates cannot leak from training into testing. The notebook asserts that no `seed_id` appears in both splits. It saves the assignment to `split_assignments.csv` so both detectors are evaluated on the same held-out cases.
+We use GroupShuffleSplit (70% train / 30% test) grouped by seed_id. All paraphrases of the same seed land on the same side, so near-duplicates cannot leak from training into testing. The notebook asserts that no seed_id appears in both splits. It saves the assignment to split_assignments.csv so both detectors are evaluated on the same held-out cases.
 
 ## Metrics
 
