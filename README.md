@@ -1,6 +1,6 @@
 # CS405 Team 4: Prompt-Injection Detection
 
-Team: Jordan, Tamea, Vasijile
+Team: Jordan White, Tamea Saunders , Vasijile Lopicic
 
 This project builds and compares two detectors that label text sent to a AI customer-support assistant as **benign (0)** or **suspected prompt injection (1)**:
 
@@ -27,8 +27,9 @@ Then choose **Run → Run All Cells**.
 
 data/                              one CSV per teammate 
   jordan_attacks.csv               direct override + role spoofing attacks
-  tamea_benign.csv                 benign examples (incl. misleading words)  
-  vasijile_attacks.csv             indirect + paraphrased attacks            
+  tamea_attacks.csv                indirect + paraphrased attacks
+  vasijile_benign.csv               benign examples (incl. misleading words) 
+  jordan_benign.csv
 prompt_injection_detection.ipynb   full pipeline: load → split → baselines → evaluation
 split_assignments.csv              generated: which texts are train vs. test
 confusion_matrices.png             generated: confusion matrices for both detectors
