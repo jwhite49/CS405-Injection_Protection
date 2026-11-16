@@ -14,10 +14,10 @@ All examples are not real
 Requires Python 3.10+.
 
 
-python -m venv .venv
+`python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-jupyter notebook prompt_injection_detection.ipynb
+jupyter notebook prompt_injection_detection.ipynb`
 
 
 Then choose **Run → Run All Cells**.
@@ -25,14 +25,14 @@ Then choose **Run → Run All Cells**.
 ## Project layout
 
 
-data/                              one CSV per teammate 
+`data/                              one CSV per teammate 
   jordan_attacks.csv               direct override + role spoofing attacks
   tamea_attacks.csv                indirect + paraphrased attacks
   vasijile_benign.csv               benign examples (incl. misleading words) 
   jordan_benign.csv
 prompt_injection_detection.ipynb   full pipeline: load → split → baselines → evaluation
 split_assignments.csv              generated: which texts are train vs. test
-confusion_matrices.png             generated: confusion matrices for both detectors
+confusion_matrices.png             generated: confusion matrices for both detectors`
 
 
 ## Dataset format
